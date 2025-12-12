@@ -32,7 +32,10 @@ const STRINGS = {
     main_menu: "Bosh menyu:",
     menu_new: "Yangi murojaat",
     menu_my: "Mening murojaatlarim",
-    menu_profile: "Profilni yangilash"
+    menu_profile: "Profilni yangilash",
+    menu_faq: "FAQ",
+    faq_header: "Tez-tez so'raladigan savollar:",
+    faq_empty: "FAQ hozircha bo'sh."
   },
   uz_cyrl: {
     welcome: "Ассалому алайкум! Давлат ташкилотлари ва маҳалла мурожаатлари ботига хуш келибсиз.",
@@ -67,7 +70,10 @@ const STRINGS = {
     main_menu: "Бош меню:",
     menu_new: "Янги мурожаат",
     menu_my: "Мени мурожаатларим",
-    menu_profile: "Профилни янгилаш"
+    menu_profile: "Профилни янгилаш",
+    menu_faq: "FAQ",
+    faq_header: "Кўп бериладиган саволлар:",
+    faq_empty: "FAQ ҳозирча бўш."
   },
 };
 

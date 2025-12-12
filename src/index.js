@@ -8,6 +8,7 @@ const storage = require('./storage');
 const organizations = require('../config/organizations.json');
 const appealTypes = require('../config/appealTypes.json');
 const locations = require('../config/locations.json');
+const faqItems = require('../config/faq.json');
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const ADMIN_CHAT_ID = process.env.ADMIN_CHAT_ID;
@@ -254,6 +255,7 @@ function showMainMenu(ctx) {
       [Markup.button.callback(t(lang, 'menu_new'), 'menu|new')],
       [Markup.button.callback(t(lang, 'menu_my'), 'menu|my')],
       [Markup.button.callback(t(lang, 'menu_profile'), 'menu|profile')],
+      [Markup.button.callback(t(lang, 'menu_faq'), 'menu|faq')],
     ])
   );
 }
@@ -266,6 +268,18 @@ function showMyAppeals(ctx) {
     return `${a.id} | ${orgLabel(a.orgId, lang)} | ${typeLabel(a.typeId, lang)} | ${a.status}`;
   });
   return ctx.reply([t(lang, 'my_appeals_header'), ...lines].join('\n'));
+}
+
+function showFaq(ctx) {
+  const lang = getLang(ctx);
+  if (!faqItems || !faqItems.length) return ctx.reply(t(lang, 'faq_empty'));
+  const lines = [t(lang, 'faq_header')];
+  faqItems.forEach((item, idx) => {
+    const q = (item.q && (item.q[lang] || item.q.uz)) || '';
+    const a = (item.a && (item.a[lang] || item.a.uz)) || '';
+    lines.push(`${idx + 1}. ${q}\n${a}`);
+  });
+  return ctx.reply(lines.join('\n\n'));
 }
 
 function askAppealType(ctx, orgId) {
@@ -350,6 +364,7 @@ bot.command('profile', (ctx) => startProfile(ctx));
 bot.command('appeal', (ctx) => startAppeal(ctx));
 bot.command('my', (ctx) => showMyAppeals(ctx));
 bot.command('menu', (ctx) => showMainMenu(ctx));
+bot.command('faq', (ctx) => showFaq(ctx));
 
 bot.on('callback_query', async (ctx) => {
   const data = ctx.callbackQuery.data || '';
@@ -467,6 +482,7 @@ bot.on('callback_query', async (ctx) => {
     if (action === 'new') return startAppeal(ctx);
     if (action === 'my') return showMyAppeals(ctx);
     if (action === 'profile') return startProfile(ctx);
+    if (action === 'faq') return showFaq(ctx);
   }
 
   return ctx.answerCbQuery('OK');

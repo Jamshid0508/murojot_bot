@@ -1,0 +1,24 @@
+[
+  {
+    "id": "how_to_start",
+    "q": {
+      "uz": "Botdan qanday foydalanaman?",
+      "uz_cyrl": "Ботдан қандай фойдаланаман?"
+    },
+    "a": {
+      "uz": "/start bosing, profilni to'ldiring va \"Yangi murojaat\" ni tanlang.",
+      "uz_cyrl": "/start босинг, профилни тўлдиринг ва \"Янги мурожаат\" ни танланг."
+    }
+  },
+  {
+    "id": "how_to_status",
+    "q": {
+      "uz": "Murojaat holatini qayerdan bilaman?",
+      "uz_cyrl": "Мурожаат ҳолатини қаердан биламан?"
+    },
+    "a": {
+      "uz": "\"Mening murojaatlarim\" bo'limidan yoki /my buyrug'i orqali.",
+      "uz_cyrl": "\"Мени мурожаатларим\" бўлимидан ёки /my буйруғи орқали."
+    }
+  }
+]
