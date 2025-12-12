@@ -1,59 +1,65 @@
 {
-  "regions": [
-    {
-      "id": "toshkent",
-      "name": {
-        "uz": "Toshkent viloyati",
-        "uz_cyrl": "Тошкент вилояти"
-      },
-      "districts": [
-        {
-          "id": "mirzo_ulugbek",
-          "name": {
-            "uz": "Mirzo Ulug'bek tumani",
-            "uz_cyrl": "Мирзо Улуғбек тумани"
-          },
-          "mahallas": [
-            {
-              "id": "oybek",
-              "name": {
-                "uz": "Oybek",
-                "uz_cyrl": "Ойбек"
-              }
-            },
-            {
-              "id": "yangi_hayot",
-              "name": {
-                "uz": "Yangi hayot",
-                "uz_cyrl": "Янги ҳаёт"
-              }
-            }
-          ]
-        },
-        {
-          "id": "chilonzor",
-          "name": {
-            "uz": "Chilonzor tumani",
-            "uz_cyrl": "Чилонзор тумани"
-          },
-          "mahallas": [
-            {
-              "id": "bunyodkor",
-              "name": {
-                "uz": "Bunyodkor",
-                "uz_cyrl": "Бунёдкор"
-              }
-            },
-            {
-              "id": "seventh",
-              "name": {
-                "uz": "7-mavze",
-                "uz_cyrl": "7-мавзе"
-              }
-            }
-          ]
-        }
-      ]
-    }
+  "mahallas": [
+    { "id": "obod", "name": { "uz": "Qamashi tuman Obod MFY", "uz_cyrl": "Қамаши туман Обод МФЙ" } },
+    { "id": "guliston", "name": { "uz": "Qamashi tuman Guliston MFY", "uz_cyrl": "Қамаши туман Гулистон МФЙ" } },
+    { "id": "zafar", "name": { "uz": "Qamashi tuman Zafar MFY", "uz_cyrl": "Қамаши туман Зафар МФЙ" } },
+    { "id": "ibn_sino", "name": { "uz": "Qamashi tuman Ibn Sino MFY", "uz_cyrl": "Қамаши туман Ибн Сино МФЙ" } },
+    { "id": "qamay", "name": { "uz": "Qamashi tuman Qamay MFY", "uz_cyrl": "Қамаши туман Қамай МФЙ" } },
+    { "id": "ortadara", "name": { "uz": "Qamashi tuman Ortadara MFY", "uz_cyrl": "Қамаши туман Ортадара МФЙ" } },
+    { "id": "oynakol", "name": { "uz": "Qamashi tuman Oynakol MFY", "uz_cyrl": "Қамаши туман Ойнакол МФЙ" } },
+    { "id": "qovchin", "name": { "uz": "Qamashi tuman Qovchin MFY", "uz_cyrl": "Қамаши туман Қовчин МФЙ" } },
+    { "id": "qorasuv", "name": { "uz": "Qamashi tuman Qorasuv MFY", "uz_cyrl": "Қамаши туман Қорасув МФЙ" } },
+    { "id": "qishliq", "name": { "uz": "Qamashi tuman Qishliq MFY", "uz_cyrl": "Қамаши туман Қишлиқ МФЙ" } },
+    { "id": "qongirot", "name": { "uz": "Qamashi tuman Qong'irot MFY", "uz_cyrl": "Қамаши туман Қонғирот МФЙ" } },
+    { "id": "yangi_avlod", "name": { "uz": "Qamashi tuman Yangi avlod MFY", "uz_cyrl": "Қамаши туман Янги авлод МФЙ" } },
+    { "id": "paxtaobod", "name": { "uz": "Qamashi tuman Paxtaobod MFY", "uz_cyrl": "Қамаши туман Пахтаобод МФЙ" } },
+    { "id": "navoiy", "name": { "uz": "Qamashi tuman Navoiy MFY", "uz_cyrl": "Қамаши туман Навоий МФЙ" } },
+    { "id": "chim", "name": { "uz": "Qamashi tuman Chim MFY", "uz_cyrl": "Қамаши туман Чим МФЙ" } },
+    { "id": "quyi_yangi", "name": { "uz": "Qamashi tuman Quyi yangi MFY", "uz_cyrl": "Қамаши туман Қуйи янги МФЙ" } },
+    { "id": "qiziltepa", "name": { "uz": "Qamashi tuman Qiziltepa MFY", "uz_cyrl": "Қамаши туман Қизилтепа МФЙ" } },
+    { "id": "samarqand", "name": { "uz": "Qamashi tuman Samarqand MFY", "uz_cyrl": "Қамаши туман Самарқанд МФЙ" } },
+    { "id": "ravot", "name": { "uz": "Qamashi tuman Ravot MFY", "uz_cyrl": "Қамаши туман Равот МФЙ" } },
+    { "id": "qizil_qishloq", "name": { "uz": "Qamashi tuman Qizil qishloq MFY", "uz_cyrl": "Қамаши туман Қизил қишлоқ МФЙ" } },
+    { "id": "istiqbol", "name": { "uz": "Qamashi tuman Istiqbol MFY", "uz_cyrl": "Қамаши туман Истиқбол МФЙ" } },
+    { "id": "toqboy", "name": { "uz": "Qamashi tuman Toqboy MFY", "uz_cyrl": "Қамаши туман Тоқбой МФЙ" } },
+    { "id": "olmazor", "name": { "uz": "Qamashi tuman Olmazor MFY", "uz_cyrl": "Қамаши туман Олмазор МФЙ" } },
+    { "id": "gulshan", "name": { "uz": "Qamashi tuman Gulshan MFY", "uz_cyrl": "Қамаши туман Гулшан МФЙ" } },
+    { "id": "berdoli", "name": { "uz": "Qamashi tuman Berdoli MFY", "uz_cyrl": "Қамаши туман Бердоли МФЙ" } },
+    { "id": "mangit", "name": { "uz": "Qamashi tuman Mangit MFY", "uz_cyrl": "Қамаши туман Мангит МФЙ" } },
+    { "id": "jonboz", "name": { "uz": "Qamashi tuman Jonboz MFY", "uz_cyrl": "Қамаши туман Жонбоз МФЙ" } },
+    { "id": "mehr", "name": { "uz": "Qamashi tuman Mehr MFY", "uz_cyrl": "Қамаши туман Меҳр МФЙ" } },
+    { "id": "dovud", "name": { "uz": "Qamashi tuman Dovud MFY", "uz_cyrl": "Қамаши туман Довуд МФЙ" } },
+    { "id": "oqrabot", "name": { "uz": "Qamashi tuman Oqrabot MFY", "uz_cyrl": "Қамаши туман Оқработ МФЙ" } },
+    { "id": "sohibkor", "name": { "uz": "Qamashi tuman Sohibkor MFY", "uz_cyrl": "Қамаши туман Соҳибкор МФЙ" } },
+    { "id": "chuqur_qishloq", "name": { "uz": "Qamashi tuman Chuqur qishloq MFY", "uz_cyrl": "Қамаши туман Чуқур қишлоқ МФЙ" } },
+    { "id": "dostlik", "name": { "uz": "Qamashi tuman Do'stlik MFY", "uz_cyrl": "Қамаши туман Дўстлик МФЙ" } },
+    { "id": "badahshon", "name": { "uz": "Qamashi tuman Badahshon MFY", "uz_cyrl": "Қамаши туман Бадахшон МФЙ" } },
+    { "id": "qoratepa", "name": { "uz": "Qamashi tuman Qoratepa MFY", "uz_cyrl": "Қамаши туман Қоратепа МФЙ" } },
+    { "id": "mayda", "name": { "uz": "Qamashi tuman Mayda MFY", "uz_cyrl": "Қамаши туман Майда МФЙ" } },
+    { "id": "yelobod", "name": { "uz": "Qamashi tuman Yelobod MFY", "uz_cyrl": "Қамаши туман Елобод МФЙ" } },
+    { "id": "sarbazor", "name": { "uz": "Qamashi tuman Sarbazzor MFY", "uz_cyrl": "Қамаши туман Сарбаззор МФЙ" } },
+    { "id": "ozbekiston", "name": { "uz": "Qamashi tuman O'zbekiston MFY", "uz_cyrl": "Қамаши туман Ўзбекистон МФЙ" } },
+    { "id": "kattaura", "name": { "uz": "Qamashi tuman Kattaura MFY", "uz_cyrl": "Қамаши туман Каттаура МФЙ" } },
+    { "id": "ulugbek", "name": { "uz": "Qamashi tuman Ulug'bek MFY", "uz_cyrl": "Қамаши туман Улуғбек МФЙ" } },
+    { "id": "baland_chayla", "name": { "uz": "Qamashi tuman Baland chayla MFY", "uz_cyrl": "Қамаши туман Баланд чайла МФЙ" } },
+    { "id": "azlartepa", "name": { "uz": "Qamashi tuman Azlartepa MFY", "uz_cyrl": "Қамаши туман Азлартепа МФЙ" } },
+    { "id": "changak", "name": { "uz": "Qamashi tuman Changak MFY", "uz_cyrl": "Қамаши туман Чангак МФЙ" } },
+    { "id": "kokbuloq", "name": { "uz": "Qamashi tuman Ko'kbuloq MFY", "uz_cyrl": "Қамаши туман Кўкбулоқ МФЙ" } },
+    { "id": "nurliyol", "name": { "uz": "Qamashi tuman Nurliyol MFY", "uz_cyrl": "Қамаши туман Нурлиёл МФЙ" } },
+    { "id": "qushkapa", "name": { "uz": "Qamashi tuman Qushkapa MFY", "uz_cyrl": "Қамаши туман Қушкапа МФЙ" } },
+    { "id": "yuksalish", "name": { "uz": "Qamashi tuman Yuksalish MFY", "uz_cyrl": "Қамаши туман Юксалиш МФЙ" } },
+    { "id": "boyburi", "name": { "uz": "Qamashi tuman Boyburi MFY", "uz_cyrl": "Қамаши туман Бойбури МФЙ" } },
+    { "id": "yortepa", "name": { "uz": "Qamashi tuman Yortepa MFY", "uz_cyrl": "Қамаши туман Ёртепа МФЙ" } },
+    { "id": "uzun", "name": { "uz": "Qamashi tuman Uzun MFY", "uz_cyrl": "Қамаши туман Узун МФЙ" } },
+    { "id": "tinchlik", "name": { "uz": "Qamashi tuman Tinchlik MFY", "uz_cyrl": "Қамаши туман Тинчлик МФЙ" } },
+    { "id": "oqguzar", "name": { "uz": "Qamashi tuman Oqguzar MFY", "uz_cyrl": "Қамаши туман Оқгузар МФЙ" } },
+    { "id": "odoqjonboz", "name": { "uz": "Qamashi tuman Odoqjonboz MFY", "uz_cyrl": "Қамаши туман Одоқжонбоз МФЙ" } },
+    { "id": "kaptarxona", "name": { "uz": "Qamashi tuman Kaptarxona MFY", "uz_cyrl": "Қамаши туман Каптархона МФЙ" } },
+    { "id": "gishtli", "name": { "uz": "Qamashi tuman Gishtli MFY", "uz_cyrl": "Қамаши туман Гиштли МФЙ" } },
+    { "id": "loyqasoy", "name": { "uz": "Qamashi tuman Loyqasoy MFY", "uz_cyrl": "Қамаши туман Лойқасой МФЙ" } },
+    { "id": "bogobod", "name": { "uz": "Qamashi tuman Bog'obod MFY", "uz_cyrl": "Қамаши туман Боғобод МФЙ" } },
+    { "id": "bobur_tepa", "name": { "uz": "Qamashi tuman Bobur tepa MFY", "uz_cyrl": "Қамаши туман Бобур тепа МФЙ" } },
+    { "id": "qorabog", "name": { "uz": "Qamashi tuman Qorabog' MFY", "uz_cyrl": "Қамаши туман Қорабоғ МФЙ" } },
+    { "id": "bunyodkor", "name": { "uz": "Qamashi tuman Bunyodkor MFY", "uz_cyrl": "Қамаши туман Бунёдкор МФЙ" } }
   ]
 }

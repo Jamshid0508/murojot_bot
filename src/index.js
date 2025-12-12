@@ -52,16 +52,8 @@ function setLang(ctx, lang) {
   if (user) storage.saveUser({ ...user, language: lang });
 }
 
-function findRegion(regionId) {
-  return locations.regions.find((r) => r.id === regionId);
-}
-function findDistrict(regionId, districtId) {
-  const region = findRegion(regionId);
-  return region ? region.districts.find((d) => d.id === districtId) : undefined;
-}
-function findMahalla(regionId, districtId, mahallaId) {
-  const district = findDistrict(regionId, districtId);
-  return district ? district.mahallas.find((m) => m.id === mahallaId) : undefined;
+function findMahalla(mahallaId) {
+  return locations.mahallas.find((m) => m.id === mahallaId);
 }
 
 function nameByLang(obj, lang) {
@@ -82,13 +74,9 @@ function orgLabel(orgId, lang) {
 }
 
 function summaryAddress(lang, payload) {
-  if (!payload || !payload.regionId) return '';
-  const region = findRegion(payload.regionId);
-  const district = findDistrict(payload.regionId, payload.districtId);
-  const mahalla = findMahalla(payload.regionId, payload.districtId, payload.mahallaId);
+  if (!payload || !payload.mahallaId) return payload.street || '';
+  const mahalla = findMahalla(payload.mahallaId);
   const parts = [];
-  if (region) parts.push(nameByLang(region, lang));
-  if (district) parts.push(nameByLang(district, lang));
   if (mahalla) parts.push(nameByLang(mahalla, lang));
   if (payload.street) parts.push(payload.street);
   return parts.join(', ');
@@ -145,30 +133,9 @@ function startProfile(ctx) {
   );
 }
 
-function promptRegion(ctx, mode = 'profile') {
+function promptMahalla(ctx, mode) {
   const lang = getLang(ctx);
-  const rows = locations.regions.map((r) => [Markup.button.callback(nameByLang(r, lang), `region|${mode}|${r.id}`)]);
-  const text = mode === 'appeal' ? t(lang, 'ask_region_other') : t(lang, 'ask_region');
-  return ctx.reply(text, Markup.inlineKeyboard(rows));
-}
-
-function promptDistrict(ctx, mode, regionId) {
-  const lang = getLang(ctx);
-  const region = findRegion(regionId);
-  if (!region) return ctx.reply('Region topilmadi.');
-  const rows = region.districts.map((d) => [
-    Markup.button.callback(nameByLang(d, lang), `district|${mode}|${regionId}|${d.id}`),
-  ]);
-  return ctx.reply(t(lang, 'ask_district'), Markup.inlineKeyboard(rows));
-}
-
-function promptMahalla(ctx, mode, regionId, districtId) {
-  const lang = getLang(ctx);
-  const district = findDistrict(regionId, districtId);
-  if (!district) return ctx.reply('Tuman topilmadi.');
-  const rows = district.mahallas.map((m) => [
-    Markup.button.callback(nameByLang(m, lang), `mahalla|${mode}|${regionId}|${districtId}|${m.id}`),
-  ]);
+  const rows = locations.mahallas.map((m) => [Markup.button.callback(nameByLang(m, lang), `mahalla|${mode}|${m.id}`)]);
   return ctx.reply(t(lang, 'ask_mahalla'), Markup.inlineKeyboard(rows));
 }
 
@@ -199,8 +166,6 @@ function finishProfile(ctx) {
     firstName: ctx.from.first_name,
     language: lang,
     phone: draft.phone,
-    regionId: draft.regionId,
-    districtId: draft.districtId,
     mahallaId: draft.mahallaId,
     street: draft.street || null,
     age: draft.age || null,
@@ -216,7 +181,7 @@ function finishProfile(ctx) {
 
 function ensureProfile(ctx) {
   const user = storage.getUser(ctx.from.id);
-  if (!user || !user.phone || !user.regionId || !user.mahallaId) {
+  if (!user || !user.phone || !user.mahallaId) {
     return false;
   }
   return true;
@@ -312,8 +277,6 @@ function finalizeAppeal(ctx, text) {
     text,
     status: 'submitted',
     createdAt: Date.now(),
-    regionId: draft.regionId || user.regionId,
-    districtId: draft.districtId || user.districtId,
     mahallaId: draft.mahallaId || user.mahallaId,
     street: draft.street || user.street || null,
   };
@@ -381,60 +344,25 @@ bot.on('callback_query', async (ctx) => {
   }
 
   if (kind === 'region') {
-    const mode = parts[1];
-    const regionId = parts[2];
-    if (mode === 'profile') {
-      ctx.session.profileDraft = ctx.session.profileDraft || {};
-      ctx.session.profileDraft.regionId = regionId;
-      ctx.session.profileDraft.districtId = null;
-      ctx.session.profileDraft.mahallaId = null;
-      await ctx.answerCbQuery('OK');
-      return promptDistrict(ctx, 'profile', regionId);
-    } else if (mode === 'appeal') {
-      ctx.session.appealDraft = ctx.session.appealDraft || {};
-      ctx.session.appealDraft.regionId = regionId;
-      ctx.session.appealDraft.districtId = null;
-      ctx.session.appealDraft.mahallaId = null;
-      await ctx.answerCbQuery('OK');
-      return promptDistrict(ctx, 'appeal', regionId);
-    }
+    await ctx.answerCbQuery('OK');
+    return ctx.answerCbQuery('OK');
   }
 
   if (kind === 'district') {
-    const mode = parts[1];
-    const regionId = parts[2];
-    const districtId = parts[3];
-    if (mode === 'profile') {
-      ctx.session.profileDraft = ctx.session.profileDraft || {};
-      ctx.session.profileDraft.regionId = regionId;
-      ctx.session.profileDraft.districtId = districtId;
-      await ctx.answerCbQuery('OK');
-      return promptMahalla(ctx, 'profile', regionId, districtId);
-    } else if (mode === 'appeal') {
-      ctx.session.appealDraft = ctx.session.appealDraft || {};
-      ctx.session.appealDraft.regionId = regionId;
-      ctx.session.appealDraft.districtId = districtId;
-      await ctx.answerCbQuery('OK');
-      return promptMahalla(ctx, 'appeal', regionId, districtId);
-    }
+    await ctx.answerCbQuery('OK');
+    return ctx.answerCbQuery('OK');
   }
 
   if (kind === 'mahalla') {
     const mode = parts[1];
-    const regionId = parts[2];
-    const districtId = parts[3];
-    const mahallaId = parts[4];
+    const mahallaId = parts[2];
     if (mode === 'profile') {
       ctx.session.profileDraft = ctx.session.profileDraft || {};
-      ctx.session.profileDraft.regionId = regionId;
-      ctx.session.profileDraft.districtId = districtId;
       ctx.session.profileDraft.mahallaId = mahallaId;
       await ctx.answerCbQuery('OK');
       return askStreet(ctx);
     } else if (mode === 'appeal') {
       ctx.session.appealDraft = ctx.session.appealDraft || {};
-      ctx.session.appealDraft.regionId = regionId;
-      ctx.session.appealDraft.districtId = districtId;
       ctx.session.appealDraft.mahallaId = mahallaId;
       await ctx.answerCbQuery('OK');
       return askAppealType(ctx, ctx.session.appealDraft.orgId);
@@ -459,13 +387,11 @@ bot.on('callback_query', async (ctx) => {
     await ctx.answerCbQuery('OK');
     if (choice === 'yes' && user && user.mahallaId) {
       ctx.session.appealDraft = ctx.session.appealDraft || {};
-      ctx.session.appealDraft.regionId = user.regionId;
-      ctx.session.appealDraft.districtId = user.districtId;
       ctx.session.appealDraft.mahallaId = user.mahallaId;
       return askAppealType(ctx, ctx.session.appealDraft.orgId);
     }
-    ctx.session.step = 'choose_region_appeal';
-    return promptRegion(ctx, 'appeal');
+    ctx.session.step = 'choose_mahalla_appeal';
+    return promptMahalla(ctx, 'appeal');
   }
 
   if (kind === 'atype') {
@@ -500,8 +426,8 @@ bot.on('contact', (ctx) => {
   ctx.session.profileDraft = ctx.session.profileDraft || {};
   ctx.session.profileDraft.phone = phone;
   ctx.reply(t(lang, 'contact_saved'));
-  ctx.session.step = 'ask_region';
-  return promptRegion(ctx, 'profile');
+  ctx.session.step = 'ask_mahalla';
+  return promptMahalla(ctx, 'profile');
 });
 
 bot.on('text', (ctx) => {
