@@ -126,7 +126,7 @@ function askLanguage(ctx) {
     t(lang, 'choose_language'),
     Markup.inlineKeyboard([
       [Markup.button.callback('O‘zbek (Lotin)', 'lang|uz')],
-      [Markup.button.callback("O'zbek (Kirill)", 'lang|uz_cyrl')],
+      [Markup.button.callback("Узбек (Кирил)", 'lang|uz_cyrl')],
     ])
   );
 }
