@@ -15,5 +15,13 @@
     "dotenv": "^17.2.3",
     "nanoid": "^5.1.6",
     "telegraf": "^4.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamshid0508/murojot_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jamshid0508/murojot_bot/issues"
+  },
+  "homepage": "https://github.com/Jamshid0508/murojot_bot#readme"
 }

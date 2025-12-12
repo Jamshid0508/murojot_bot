@@ -34,6 +34,7 @@ const STRINGS = {
     menu_my: "Mening murojaatlarim",
     menu_profile: "Profilni yangilash",
     menu_faq: "FAQ",
+    faq_button: "Tez-tez beriladigan savollar",
     faq_header: "Tez-tez so'raladigan savollar:",
     faq_empty: "FAQ hozircha bo'sh."
   },
@@ -72,6 +73,7 @@ const STRINGS = {
     menu_my: "Мени мурожаатларим",
     menu_profile: "Профилни янгилаш",
     menu_faq: "FAQ",
+    faq_button: "Кўп бериладиган саволлар",
     faq_header: "Кўп бериладиган саволлар:",
     faq_empty: "FAQ ҳозирча бўш."
   },

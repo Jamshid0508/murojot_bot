@@ -126,8 +126,8 @@ function askLanguage(ctx) {
   return ctx.reply(
     t(lang, 'choose_language'),
     Markup.inlineKeyboard([
-      [Markup.button.callback('O‘zbek (Lotin)', 'lang|uz')],
-      [Markup.button.callback("Узбек (Кирил)", 'lang|uz_cyrl')],
+      [Markup.button.callback("O'zbek (Lotin)", 'lang|uz')],
+      [Markup.button.callback('Ўзбек (Кирилл)', 'lang|uz_cyrl')],
     ])
   );
 }
@@ -365,6 +365,8 @@ bot.command('appeal', (ctx) => startAppeal(ctx));
 bot.command('my', (ctx) => showMyAppeals(ctx));
 bot.command('menu', (ctx) => showMainMenu(ctx));
 bot.command('faq', (ctx) => showFaq(ctx));
+// Fallback: handle /faq with bot username or extra spaces
+bot.hears(/^\/faq(@\w+)?\s*$/i, (ctx) => showFaq(ctx));
 
 bot.on('callback_query', async (ctx) => {
   const data = ctx.callbackQuery.data || '';
@@ -499,7 +501,10 @@ bot.on('contact', (ctx) => {
   }
   ctx.session.profileDraft = ctx.session.profileDraft || {};
   ctx.session.profileDraft.phone = phone;
-  ctx.reply(t(lang, 'contact_saved'));
+  ctx.reply(
+    t(lang, 'contact_saved'),
+    Markup.inlineKeyboard([[Markup.button.callback(t(lang, 'faq_button'), 'menu|faq')]])
+  );
   ctx.session.step = 'ask_region';
   return promptRegion(ctx, 'profile');
 });
