@@ -427,18 +427,9 @@ bot.on('contact', (ctx) => {
   }
   ctx.session.profileDraft = ctx.session.profileDraft || {};
   ctx.session.profileDraft.phone = phone;
-<<<<<<< HEAD
-  ctx.reply(
-    t(lang, 'contact_saved'),
-    Markup.inlineKeyboard([[Markup.button.callback(t(lang, 'faq_button'), 'menu|faq')]])
-  );
-  ctx.session.step = 'ask_region';
-  return promptRegion(ctx, 'profile');
-=======
   ctx.reply(t(lang, 'contact_saved'));
   ctx.session.step = 'ask_mahalla';
   return promptMahalla(ctx, 'profile');
->>>>>>> 1ac6fee750d842a03f1c7edd7d85679347243fa5
 });
 
 bot.on('text', (ctx) => {
