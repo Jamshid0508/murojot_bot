@@ -1,0 +1,59 @@
+{
+  "regions": [
+    {
+      "id": "toshkent",
+      "name": {
+        "uz": "Toshkent viloyati",
+        "uz_cyrl": "Тошкент вилояти"
+      },
+      "districts": [
+        {
+          "id": "mirzo_ulugbek",
+          "name": {
+            "uz": "Mirzo Ulug'bek tumani",
+            "uz_cyrl": "Мирзо Улуғбек тумани"
+          },
+          "mahallas": [
+            {
+              "id": "oybek",
+              "name": {
+                "uz": "Oybek",
+                "uz_cyrl": "Ойбек"
+              }
+            },
+            {
+              "id": "yangi_hayot",
+              "name": {
+                "uz": "Yangi hayot",
+                "uz_cyrl": "Янги ҳаёт"
+              }
+            }
+          ]
+        },
+        {
+          "id": "chilonzor",
+          "name": {
+            "uz": "Chilonzor tumani",
+            "uz_cyrl": "Чилонзор тумани"
+          },
+          "mahallas": [
+            {
+              "id": "bunyodkor",
+              "name": {
+                "uz": "Bunyodkor",
+                "uz_cyrl": "Бунёдкор"
+              }
+            },
+            {
+              "id": "seventh",
+              "name": {
+                "uz": "7-mavze",
+                "uz_cyrl": "7-мавзе"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

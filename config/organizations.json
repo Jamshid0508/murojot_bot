@@ -1,0 +1,35 @@
+[
+  {
+    "id": "tuman_tibbiyot",
+    "name": {
+      "uz": "Tuman tibbiyot birlashmasi",
+      "uz_cyrl": "Туман тиббиёт бирлашмаси"
+    },
+    "typeIds": ["complaint", "suggestion", "info", "emergency", "other"],
+    "envVar": "ORG_TUMAN_TIBBIYOT_CHAT_IDS",
+    "forwardChatId": "-100000000001",
+    "isMahallaAware": false
+  },
+  {
+    "id": "tuman_elektr",
+    "name": {
+      "uz": "Tuman elektr tarmoqlari",
+      "uz_cyrl": "Туман электр тармоқлари"
+    },
+    "typeIds": ["complaint", "suggestion", "info", "emergency", "other"],
+    "envVar": "ORG_TUMAN_ELEKTR_CHAT_IDS",
+    "forwardChatId": "-100000000002",
+    "isMahallaAware": false
+  },
+  {
+    "id": "mahalla_sektori",
+    "name": {
+      "uz": "Mahalla sektori",
+      "uz_cyrl": "Маҳалла сектори"
+    },
+    "typeIds": ["complaint", "suggestion", "info", "emergency", "other"],
+    "envVar": "ORG_MAHALLA_SEKTORI_CHAT_IDS",
+    "forwardChatId": "-100000000003",
+    "isMahallaAware": true
+  }
+]

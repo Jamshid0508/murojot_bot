@@ -1,0 +1,37 @@
+[
+  {
+    "id": "complaint",
+    "label": {
+      "uz": "Shikoyat",
+      "uz_cyrl": "Шикоят"
+    }
+  },
+  {
+    "id": "suggestion",
+    "label": {
+      "uz": "Taklif",
+      "uz_cyrl": "Таклиф"
+    }
+  },
+  {
+    "id": "info",
+    "label": {
+      "uz": "Ma'lumot so'rash",
+      "uz_cyrl": "Маълумот сўраш"
+    }
+  },
+  {
+    "id": "emergency",
+    "label": {
+      "uz": "Avariya/xavfli holat",
+      "uz_cyrl": "Авария/хавфли ҳолат"
+    }
+  },
+  {
+    "id": "other",
+    "label": {
+      "uz": "Boshqa",
+      "uz_cyrl": "Бошқа"
+    }
+  }
+]
